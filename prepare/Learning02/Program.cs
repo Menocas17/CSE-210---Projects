@@ -18,8 +18,14 @@ class Program
         job2._starYear = "2017";
         job2._endYear = "2020";
 
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
+        Resume jhonResume = new Resume ();
+
+        jhonResume._name = "Jhon Jhonson";
+        jhonResume._jobs.Add(job1);
+        jhonResume._jobs.Add(job2);
+
+
+        jhonResume.DisplayResume();
 
     }
 }
