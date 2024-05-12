@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks.Dataflow;
 
@@ -110,44 +111,55 @@ public class Library
     private string _reference;
     private string _text;
 
+    private Scripture _currentScripture;
+
+
     Random randomIndex = new Random ();
 
-    public void RandomScripture ()
+    public void GetRandomScripture ()
     {
         string randomScriptureKey = _scriptureDictionary.Keys.ElementAt(randomIndex.Next(_scriptureDictionary.Count));
 
         _reference = randomScriptureKey;
         _text = _scriptureDictionary[randomScriptureKey];
-    }
 
-    public void SpecificScripture(string scripture)
-    {
-        // if (endVerse > 0)
-        // {
-
-        //     string key = "${book} {chapter}:{verse}-{endVerse}";
-            string specificScripture = _scriptureDictionary[scripture];
-
-            _reference = scripture;
-            _text = specificScripture;
-
-        // }
-
-        // else
-        // {
-        //     string key = "${book} {chapter}:{verse}";
-        //     string specificScripture = _scriptureDictionary[key];
-        //     _reference = "${book} {chapter}:{verse}";
-        //     _text = specificScripture;
-        // };
-
-        
+        _currentScripture = new Scripture();
+        _currentScripture.SetScripture(GetScriptureText());
         
     }
 
-    public string GetScripture ()
+    public void GetSpecificScripture(string scripture)
     {
-        string scripture = $"{_reference}\n{_text}";
-        return scripture;
+
+        string specificScripture = _scriptureDictionary[scripture];
+
+        _reference = scripture;
+        _text = specificScripture;
+
+        _currentScripture = new Scripture();
+        _currentScripture.SetScripture(GetScriptureText());
+        
     }
+
+    public string GetScriptureText()
+    {
+        return _text;
+    }
+
+    public string GetScriptureReference ()
+    {
+        return _reference;
+    }
+
+    // public void CreateScripture()
+    // {
+    //     _currentScripture = new Scripture();
+    //     _currentScripture.SetScripture(GetScriptureText());
+    // }
+
+    public Scripture GetCurrentScripture()
+    {
+        return _currentScripture;
+    }
+
 }
