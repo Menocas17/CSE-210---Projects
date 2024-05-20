@@ -3,12 +3,12 @@ using System.Runtime.CompilerServices;
 public class Assingment 
 {
     private string _studentName;
-    private string __topic;
+    private string _topic;
 
     public Assingment ()
     {
         _studentName = "Unknown";
-        __topic = "Unknown";
+        _topic = "Unknown";
     }
 
     public Assingment (string studentName, string topic)
@@ -20,6 +20,11 @@ public class Assingment
     public string GetSummary ()
     {
         return $"{_studentName} - {_topic}";
+    }
+
+    public string GetStudentName ()
+    {
+        return _studentName;
     }
     
 }
