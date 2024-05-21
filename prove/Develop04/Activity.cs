@@ -5,27 +5,58 @@ public class Activity
     private int  _activityDuration;
     private string _endingMessage;
 
-    public Activity(string activityName, string description)
+    public Activity ()
+    {
+        _activityName = "Unknown";
+        _activityDuration = 0;
+        _description = "null";
+        _endingMessage = "Time is over, good job, you're doing great!!!";
+    }
+
+    public Activity (string activityName, string description, int activityDuration)
     {
         _activityName = activityName;
         _description = description;
-        _endingMessage = "Good job, you're doing great!!!";
-    }
-
-    public string GetStartingMessage()
-    {
-        return $"{_activityName}\n{_description}";
-    }
-
-    public string GetEndingMessage()
-    {
-        return _endingMessage;
-        
-    }
-
-    public void SetActivityDuration (int activityDuration)
-    {
         _activityDuration = activityDuration;
+        _endingMessage = "Time is over, good job, you're doing great!!!";
+    }
+
+    public int GetActivityDuration()
+    {
+        return _activityDuration;
+    }
+
+    public void DisplayStartingMessage()
+
+    {
+        Console.Clear();
+        Console.WriteLine($"Welcome to {_activityName}\n\n{_description}\n");
+
+        while(true)
+        {
+            Console.Write("How long, in seconds, would you like for your session (min 10 sec)?  ");
+            string activityDurationString = Console.ReadLine();
+            _activityDuration = int.Parse(activityDurationString);
+
+            if(_activityDuration < 10)
+            {
+                Console.WriteLine("Sorry, the duration you entered is not valid");
+                continue;
+            }
+
+            else
+            {
+                break;
+            }
+        }
+        
+
+    }
+
+    public void DisplayEndingMessage()
+    {
+        Console.WriteLine(_endingMessage);
+        
     }
 
     public void WaitingAnimation()
