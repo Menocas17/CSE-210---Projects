@@ -4,7 +4,7 @@ public class BreathActivity : Activity
 {
     private List<string> BreathText = new List<string> {"Breath in", "Breath out"};
 
-    public BreathActivity(string activityName, string description, int activityDuration) : base(activityName, description, activityDuration)
+    public BreathActivity(string activityName, string description) : base(activityName, description)
     {
         
     }

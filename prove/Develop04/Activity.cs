@@ -13,11 +13,10 @@ public class Activity
         _endingMessage = "Time is over, good job, you're doing great!!!";
     }
 
-    public Activity (string activityName, string description, int activityDuration)
+    public Activity (string activityName, string description)
     {
         _activityName = activityName;
         _description = description;
-        _activityDuration = activityDuration;
         _endingMessage = "Time is over, good job, you're doing great!!!";
     }
 
@@ -59,11 +58,11 @@ public class Activity
         
     }
 
-    public void WaitingAnimation()
+    public void WaitingAnimation(int seconds)
     {
-        List<string> animationStrings = new List<string> {"|", "/", "-", "\\", "|"};
+        List<string> animationStrings = new List<string> {"|", "/", "-", "\\"};
         DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
+        DateTime futureTime = startTime.AddSeconds(seconds);
 
         while(true)
         {

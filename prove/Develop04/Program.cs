@@ -4,9 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        BreathActivity breathActivity = new BreathActivity("Breath Activity", "testing", 10);
+        ReflectionActivity breathActivity = new ReflectionActivity("Breath Activity", "testing");
         breathActivity.DisplayStartingMessage();
-        breathActivity.DisplayBreathingInstructions();
+        breathActivity.GetRandomPrompt();
+        breathActivity.GetRandomQuestion();
 
 
     }
