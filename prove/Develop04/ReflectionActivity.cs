@@ -26,14 +26,14 @@ public class ReflectionActivity : Activity
 
     }
 
-    public void GetRandomPrompt()
+    public string GetRandomPrompt()
     {
         Random random = new Random();
         int randomIndex = random.Next(0, _prompts.Count);
 
         string randomPrompt = _prompts[randomIndex];
 
-        Console.WriteLine(randomPrompt) ;
+        return randomPrompt;
     }
 
     public void GetRandomQuestion ()
@@ -75,5 +75,23 @@ public class ReflectionActivity : Activity
             
 
            
+    }
+
+    public void Run()
+    {
+        DisplayStartingMessage();
+        Console.WriteLine("Consider the following prompt:");
+        string randomPrompt = GetRandomPrompt();
+        Console.WriteLine($"\n --- {randomPrompt} ---");
+        Console.Write("\nWhen you have something in mind press enter to continue.");
+        Console.ReadLine();
+
+        Console.WriteLine("\nNow ponder on each of the following questions as they related to this experience");
+        Console.WriteLine("You may begin in:");
+        Counter(5);
+        Console.Clear();
+        Console.WriteLine($"\n --- {randomPrompt} ---\n");
+        GetRandomQuestion();
+        DisplayEndingMessage();
     }
 }

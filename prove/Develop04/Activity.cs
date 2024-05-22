@@ -10,7 +10,7 @@ public class Activity
         _activityName = "Unknown";
         _activityDuration = 0;
         _description = "null";
-        _endingMessage = "Time is over, good job, you're doing great!!!";
+        _endingMessage = $"Time is over, good job, you're doing great!!!";
     }
 
     public Activity (string activityName, string description)
@@ -25,6 +25,11 @@ public class Activity
         return _activityDuration;
     }
 
+    public string GetActivityName()
+    {
+        return _activityName;
+    }
+
     public void DisplayStartingMessage()
 
     {
@@ -33,7 +38,7 @@ public class Activity
 
         while(true)
         {
-            Console.Write("How long, in seconds, would you like for your session (min 10 sec)?  ");
+            Console.Write("How long, in seconds, would you like for your session (min 10 seconds)?  ");
             string activityDurationString = Console.ReadLine();
             _activityDuration = int.Parse(activityDurationString);
 
@@ -48,13 +53,20 @@ public class Activity
                 break;
             }
         }
-        
 
+        Console.Clear();
+        Console.WriteLine("Get Ready...");
+        WaitingAnimation(4);
+        Console.Clear();
     }
 
     public void DisplayEndingMessage()
     {
+        
+        Console.Clear();
         Console.WriteLine(_endingMessage);
+        Console.WriteLine($"\nYou have completed another {GetActivityDuration()} seconds of the {GetActivityName()}");
+        WaitingAnimation(4);
         
     }
 

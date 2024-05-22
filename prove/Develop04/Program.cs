@@ -4,10 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        ReflectionActivity breathActivity = new ReflectionActivity("Breath Activity", "testing");
-        breathActivity.DisplayStartingMessage();
-        breathActivity.GetRandomPrompt();
-        breathActivity.GetRandomQuestion();
+        ListingActivity Activity1 = new ListingActivity("Breath Activity", "testing");
+        Activity1.Run();
+
+
+        BreathActivity activity2 = new BreathActivity("Breath Activity", "testing");
+        // activity2.Run();
+        
 
 
     }

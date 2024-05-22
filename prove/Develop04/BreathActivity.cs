@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 public class BreathActivity : Activity
 {
-    private List<string> BreathText = new List<string> {"Breath in", "Breath out"};
+    private List<string> BreathText = new List<string> {"Breathe in...", "Now breathe out..."};
 
     public BreathActivity(string activityName, string description) : base(activityName, description)
     {
@@ -29,5 +29,14 @@ public class BreathActivity : Activity
             }
         }
 
+    }
+
+    public void Run()
+    {
+        DisplayStartingMessage();
+        Console.Clear();
+        DisplayBreathingInstructions();
+        DisplayEndingMessage();
+    
     }
 }
