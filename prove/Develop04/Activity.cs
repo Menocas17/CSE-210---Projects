@@ -72,7 +72,7 @@ public class Activity
 
     public void WaitingAnimation(int seconds)
     {
-        List<string> animationStrings = new List<string> {"|", "/", "-", "\\"};
+        List<string> animationStrings = new List<string> {"|", "/", "-", "\\", "|", "/", "-", "\\"};
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(seconds);
 
@@ -81,7 +81,7 @@ public class Activity
             foreach(string i in animationStrings)
             {
                 Console.Write(i);
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 Console.Write("\b \b");
 
 

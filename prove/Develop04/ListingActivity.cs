@@ -58,13 +58,6 @@ public class ListingActivity : Activity
             string userEntry = Console.ReadLine();
             _count += 1;
         }
-
-        while (Console.KeyAvailable)
-        {
-            string userEntry = Console.ReadLine();
-            _count += 1;
-        }
-
     
     }
 
@@ -73,9 +66,8 @@ public class ListingActivity : Activity
         DisplayStartingMessage();
         GetListFromUser();
         Console.WriteLine($"\n You listed {_count} items!");
+        Thread.Sleep(3000);
         DisplayEndingMessage();
 
     }
-
-
 }
