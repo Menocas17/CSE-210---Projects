@@ -1,6 +1,8 @@
 using System;
 using System.Configuration.Assemblies;
 
+// For this assignment, I exceed the core requirements, adding a new class called "ActivityStats"  for keeping track of time spent in the activities and how many times the activities were run. Also added an extra logic to the ReflectionActivity class, so the random question does not repeat until all of them has been displayed. The other little addition was that the user needs to spent at least ten second in any of the activities to make sure the activity can be well performed.  
+
 class Program
 {
     static void Main(string[] args)
