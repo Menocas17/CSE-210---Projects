@@ -60,7 +60,7 @@ public class Goal
     }
     public virtual string GetStringRepresentation()
     {
-        return $"{GetName()}/{GetDescription()}/{GetPoints()}";
+        return $"{GetName()}/{GetDescription()}/{GetPoints()}/{GetCompleteDetails()}";
     }
 
 

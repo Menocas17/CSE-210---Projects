@@ -17,9 +17,14 @@ public class CheckListGoal : Goal
         return _bonusPoints;
     }
 
-    public void SetAmountCompleted()
+    public void AddAmountCompleted()
     {
         _amountCompleted ++;
+    }
+
+    public void SetAmountCompleted(int amount)
+    {
+        _amountCompleted = amount;
     }
 
     public int GetAmountCompleted()
@@ -50,7 +55,7 @@ public class CheckListGoal : Goal
 
      public override string GetStringRepresentation()
     {
-        return $"CheckListGoal:{GetName()}/{GetDescription()}/{GetPoints()}/{_target}/{_amountCompleted}/{_bonusPoints}";
+        return $"CheckListGoal:{GetName()}/{GetDescription()}/{GetPoints()}/{GetCompleteDetails()}/{_target}/{_amountCompleted}/{_bonusPoints}";
     }
 
 }
