@@ -1,5 +1,6 @@
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices.Marshalling;
+using System.Threading.Tasks.Dataflow;
 
 public class Order
 {
@@ -32,7 +33,7 @@ public class Order
         Console.WriteLine($"Address: {_customer.GetCustomerAddress()}");
     }
 
-    public decimal TotalCost()
+    public void TotalCost()
     {
 
         decimal totalToPay = 0;
@@ -51,7 +52,7 @@ public class Order
             totalToPay += 35;
         }
 
-        return totalToPay;
+        Console.WriteLine($"Total Cost: ${totalToPay}");
     }
 
 }
