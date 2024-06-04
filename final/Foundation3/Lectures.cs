@@ -14,7 +14,7 @@ public class Lectures : Event
         base.DisplayFullDetails();
         Console.WriteLine($"Type of event: Lecture");
         Console.WriteLine($"Speaker: {_speaker}");
-        Console.WriteLine($"Capacity: {_maxCapacity}");
+        Console.WriteLine($"Capacity: {_maxCapacity}\n");
     }
 
     public override void ShortDescription()

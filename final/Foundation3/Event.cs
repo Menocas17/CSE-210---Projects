@@ -25,7 +25,7 @@ public class Event
 
     public void DisplayStandardDetails()
     {
-        Console.WriteLine("Title: {_eventTitle}:");
+        Console.WriteLine($"Title: {_eventTitle}");
         Console.WriteLine($"{_description}");
         Console.WriteLine($"Date and time: {_date} at {_time}");
         Console.WriteLine($"Address: {_address.GetFullAddress()}");
@@ -34,12 +34,12 @@ public class Event
 
     public virtual void DisplayFullDetails()
     {
-        DisplayFullDetails();
+        DisplayStandardDetails();
 
     }
 
     public virtual void ShortDescription()
     {
-        Console.WriteLine($"{_eventTitle} - {_date}");
+        Console.WriteLine($"{_eventTitle} - {_date}\n");
     }
 }

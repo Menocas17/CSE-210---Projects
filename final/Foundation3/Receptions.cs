@@ -16,8 +16,8 @@ public class Receptions : Event
         base.DisplayFullDetails();
         Console.WriteLine($"Type of event: Reception");
         Console.WriteLine($"Email sent to guest:\n");
-        Console.WriteLine($"Reciept Name: {_recieptName}  -  Email address: {_email}");
-        Console.WriteLine($"{_message}");
+        Console.WriteLine($"- Reciept Name: {_recieptName}  -  Email address: {_email}");
+        Console.WriteLine($"- {_message}\n");
     }
 
     public override void ShortDescription()

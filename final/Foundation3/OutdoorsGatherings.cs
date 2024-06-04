@@ -11,7 +11,7 @@ public class OutdoorsGatherings : Event
     {
         base.DisplayFullDetails();
         Console.WriteLine($"Type of event: Outdoor Gathering");
-        Console.WriteLine($"Statement of weather: {_weatherForecast}");
+        Console.WriteLine($"Statement of weather: {_weatherForecast}\n");
     }
 
     public override void ShortDescription()
