@@ -2,7 +2,7 @@ public class Running : Activity
 {
     private float _distance;
 
-    public Running (float duration, string date, float distance) : base (duration, date)
+    public Running (int duration, string date, float distance) : base (duration, date)
     {
         _distance = distance;
     }
@@ -26,6 +26,6 @@ public class Running : Activity
     public override string GetActivitySummary()
     {
         string activityType = "Running";
-        return $"{GetDate()} {activityType} ({GetDuration()}): Distance {GetDistance()}, Speed {GetSpeed()}, Pace {GetPace()}";
+        return $"{GetDate()} {activityType} ({GetDuration()} minutes): Distance {GetDistance():F2} Km, Speed {GetSpeed():F2} kph, Pace {GetPace():F2} min per km";
     } 
 }

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 public  abstract class Activity
 {
-    private float _duration;
+    private int _duration;
     private string _date;
 
     public Activity()
@@ -11,7 +11,7 @@ public  abstract class Activity
 
     }
 
-    public float GetDuration()
+    public int GetDuration()
     {
         return _duration;
     }
@@ -21,7 +21,7 @@ public  abstract class Activity
         return _date;
     }
 
-    public Activity (float duration, string date)
+    public Activity (int duration, string date)
     {
         _duration = duration;
         _date = date;
@@ -36,6 +36,6 @@ public  abstract class Activity
     public virtual string GetActivitySummary()
     {
         string activityType = "activty";
-        return $"{GetDate()} {activityType} ({GetDuration()}): Distance {GetDistance()}, Speed {GetSpeed()}, Pace {GetPace()}";
+        return $"{GetDate()} {activityType} ({GetDuration()} minutes): Distance {GetDistance():F2} Km, Speed {GetSpeed():F2} kph, Pace {GetPace():F2} min per km";
     }
 }
