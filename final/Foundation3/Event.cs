@@ -9,6 +9,11 @@ public class Event
     private string _time;
     private Address _address;
 
+    public Event()
+    {
+
+    }
+
     public Event (string title, string description, string date, string time, Address address)
     {
         _eventTitle = title;
@@ -35,6 +40,6 @@ public class Event
 
     public virtual void ShortDescription()
     {
-        Console.WriteLine($"(type of event) - {_eventTitle}, {_date}");
+        Console.WriteLine($"{_eventTitle} - {_date}");
     }
 }
